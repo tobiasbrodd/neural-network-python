@@ -83,15 +83,15 @@ def plot_predictions(predict, X, y, X_scale, y_scale):
     yp *= y_scale
     plt.scatter(XP, yp, color="limegreen", marker='.')
 
-def fixed_series_demo():
+def fixed_sequence_demo():
     inputSize = 1
     hiddenSizes = [100, 200, 100]
     outputSize = 1
 
-    serie = np.arange(0, 10, 0.1)
+    sequence = np.arange(0, 10, 0.1)
 
-    X = np.array([serie]).T
-    y = np.array([np.exp(serie)]).T
+    X = np.array([sequence]).T
+    y = np.array([np.exp(sequence)]).T
 
     X_scale = np.power(10, len(str(int(np.amax(X)))))
     y_scale = np.power(10, len(str(int(np.amax(y)))))
@@ -105,7 +105,7 @@ def fixed_series_demo():
     plot_predictions(lambda x: NN.predict(x), X, y, X_scale, y_scale)
     plt.show()
 
-def normal_series_demo():
+def normal_sequence_demo():
     inputSize = 1
     hiddenSizes = [25]
     outputSize = 1
@@ -131,7 +131,7 @@ def normal_series_demo():
         plot_predictions(lambda x: NN.predict(x), X, y, X_scale, y_scale)
     plt.show()
 
-def random_series_demo():
+def random_sequence_demo():
     inputSize = 1
     hiddenSizes = [25]
     outputSize = 1
@@ -191,9 +191,9 @@ def random_decision_boundary_demo():
     plt.show()
 
 if __name__ == '__main__':
-    fixed_series_demo()
-    # normal_series_demo()
-    # random_series_demo()
+    # fixed_sequence_demo()
+    # normal_sequence_demo()
+    # random_sequence_demo()
     # logistic_regression_decision_boundary_demo()
     # moons_decision_boundary_demo()
     # random_decision_boundary_demo()
