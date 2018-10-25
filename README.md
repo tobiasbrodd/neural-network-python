@@ -10,7 +10,7 @@ A neural network implemented from scratch
 * [How to build a three-layer neural network from scratch](https://medium.freecodecamp.org/building-a-3-layer-neural-network-from-scratch-99239c4af5d3)
 
 ## How To
-The file *neural* currently includes five neural network demos and these are the following:
+The file *examples* currently includes five neural network demos and these are the following:
 * **fixed_sequence_demo** - NN applied on a fixed sequence
 * **normal_sequence_demo** - NN applied on a normally distributed sequence
 * **random_sequence_demo** - NN applied on a random sequence
