@@ -28,10 +28,10 @@ def plot_predictions(predict, X, y, X_scale, y_scale):
     yp *= y_scale
     plt.scatter(XP, yp, color="limegreen", marker='.')
 
-def fixed_sequence_demo():
-    inputSize = 1
-    hiddenSizes = [100, 200, 100]
-    outputSize = 1
+def exponential_sequence_example():
+    input_size = 1
+    hidden_sizes = [100, 200, 100]
+    output_size = 1
 
     sequence = np.arange(0, 10, 0.1)
 
@@ -44,16 +44,16 @@ def fixed_sequence_demo():
     X = X / X_scale
     y = y / y_scale
 
-    NN = NeuralNetwork(inputSize, hiddenSizes, outputSize)
+    NN = NeuralNetwork(input_size, hidden_sizes, output_size)
     NN.train(X, y, 10000)
 
     plot_predictions(lambda x: NN.predict(x), X, y, X_scale, y_scale)
     plt.show()
 
-def normal_sequence_demo():
-    inputSize = 1
-    hiddenSizes = [25]
-    outputSize = 1
+def normal_sequence_example():
+    input_size = 1
+    hidden_sizes = [25]
+    output_size = 1
 
     for i in range(0, 4):
         X = np.array([range(0, 100)]).T
@@ -69,22 +69,22 @@ def normal_sequence_demo():
         X = X / X_scale
         y = y / y_scale
 
-        NN = NeuralNetwork(inputSize, hiddenSizes, outputSize)
+        NN = NeuralNetwork(input_size, hidden_sizes, output_size)
         NN.train(X, y, 10000)
 
         plt.subplot(221 + i)
         plot_predictions(lambda x: NN.predict(x), X, y, X_scale, y_scale)
     plt.show()
 
-def random_sequence_demo():
-    inputSize = 1
-    hiddenSizes = [25]
-    outputSize = 1
+def random_sequence_example():
+    input_size = 1
+    hidden_sizes = [25]
+    output_size = 1
 
     for i in range(0, 4):
-        X = np.sort(np.random.uniform(0, 100, (25, inputSize)), axis=0)
+        X = np.sort(np.random.uniform(0, 100, (25, input_size)), axis=0)
         X = np.sort(np.concatenate((X, X * 0.75)), axis=0)
-        y = np.sort(np.random.uniform(0, 100, (25, outputSize)), axis=1)
+        y = np.sort(np.random.uniform(0, 100, (25, output_size)), axis=1)
         y = np.sort(np.concatenate((y, y * 0.75)), axis=1)
 
         X_scale = np.power(10, len(str(int(np.amax(X)))))
@@ -93,14 +93,14 @@ def random_sequence_demo():
         X = X / X_scale
         y = y / y_scale
 
-        NN = NeuralNetwork(inputSize, hiddenSizes, outputSize)
+        NN = NeuralNetwork(input_size, hidden_sizes, output_size)
         NN.train(X, y, 10000)
 
         plt.subplot(221 + i)
         plot_predictions(lambda x: NN.predict(x), X, y, X_scale, y_scale)
     plt.show()
 
-def logistic_regression_decision_boundary_demo():
+def logistic_regression_decision_boundary_example():
     np.random.seed(0)
     X, y = make_moons(200, noise=0.20)
     clf = LogisticRegressionCV()
@@ -109,37 +109,37 @@ def logistic_regression_decision_boundary_demo():
     plot_decision_boundary(lambda x: clf.predict(x), X, y)
     plt.show()
 
-def moons_decision_boundary_demo():
-    inputSize = 2
-    hiddenSizes = [5, 10, 5]
-    outputSize = 1
+def moons_decision_boundary_example():
+    input_size = 2
+    hidden_sizes = [5, 10, 5]
+    output_size = 1
 
     np.random.seed(0)
     X, y = make_moons(200, noise=0.20)
     y = np.array([y]).T
-    NN = NeuralNetwork(inputSize, hiddenSizes, outputSize)
+    NN = NeuralNetwork(input_size, hidden_sizes, output_size)
     NN.train(X, y, 10000)
     plot_decision_boundary(lambda x: NN.predict(x), X, y)
     plt.show()
 
-def random_decision_boundary_demo():
-    inputSize = 2
-    hiddenSizes = [10, 20, 30, 20, 10]
-    outputSize = 1
+def random_decision_boundary_example():
+    input_size = 2
+    hidden_sizes = [10, 20, 30, 20, 10]
+    output_size = 1
 
     np.random.seed(0)
     X = np.random.randn(100, 2)
     y = np.random.randint(0, 2, (100, 1))
-    NN = NeuralNetwork(inputSize, hiddenSizes, outputSize)
+    NN = NeuralNetwork(input_size, hidden_sizes, output_size)
     NN.train(X, y, 10000)
     plot_decision_boundary(lambda x: NN.predict(x), X, y)
     plt.show()
 
 if __name__ == '__main__':
-    # fixed_sequence_demo()
-    # normal_sequence_demo()
-    # random_sequence_demo()
-    # logistic_regression_decision_boundary_demo()
-    moons_decision_boundary_demo()
-    # random_decision_boundary_demo()
+    # exponential_sequence_example()
+    # normal_sequence_example()
+    # random_sequence_example()
+    # logistic_regression_decision_boundary_example()
+    moons_decision_boundary_example()
+    # random_decision_boundary_example()
     

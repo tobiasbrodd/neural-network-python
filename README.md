@@ -1,5 +1,5 @@
-# neural-network
-A neural network implemented from scratch
+# neural-network-python
+A neural network implemented from scratch in Python
 
 ## Reading List
 * [Build a Neural Network](https://enlight.nyc/projects/neural-network/)
@@ -10,14 +10,14 @@ A neural network implemented from scratch
 * [How to build a three-layer neural network from scratch](https://medium.freecodecamp.org/building-a-3-layer-neural-network-from-scratch-99239c4af5d3)
 
 ## How To
-The file *examples* currently includes five neural network demos:
-* **fixed_sequence_demo** - NN applied on a fixed sequence
-* **normal_sequence_demo** - NN applied on a normally distributed sequence
-* **random_sequence_demo** - NN applied on a random sequence
-* **moons_decision_boundary_demo** - Displays the decision boundary for a group 2D sequence
-* **random_decision_boundary_demo** - Displays the decision boundary for a random 2D sequence
+The file *examples* currently includes five neural network examples:
+* **exponential_sequence_example** - NN applied on an exponential sequence
+* **normal_sequence_example** - NN applied on a normally distributed sequence
+* **random_sequence_example** - NN applied on a random sequence
+* **moons_decision_boundary_example** - Displays the decision boundary for a group 2D sequence
+* **random_decision_boundary_example** - Displays the decision boundary for a random 2D sequence
 
-The file also includes a decision boundary visualisation demo called **logistic_regression_decision_boundary_demo** that uses Scikit-learn's regression fitting model.
+The file also includes a decision boundary visualisation demo called **logistic_regression_decision_boundary_example** that uses Scikit-learn's regression fitting model.
 
 ### Neural network arguments
 It is possible to change a number of arguments for the neural network:
